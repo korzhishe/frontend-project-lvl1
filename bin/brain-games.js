@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import {run} from "../src/cli";
-console.log(run());
+import {run} from "../src/cli.js";
+run();
