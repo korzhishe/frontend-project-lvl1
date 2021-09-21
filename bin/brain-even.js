@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync'
 
-const WELCOME = 'Welcome to the Brain Games!';
+const WELCOME = 'Welcome to the Brain Even!';
 const QUESTION_NAME = `May I have your name? `;
 const NUMBERS = [15, 6, 7];
 
