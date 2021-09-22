@@ -13,8 +13,7 @@ const QUESTIONS = [
 
 console.log(WELCOME);
 const name = readlineSync.question(QUESTION_NAME);
-const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.
-                Let's try again, ${name}!`;
+const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
 const game = make_v2(QUESTIONS, unCorrectAnswer);
 const isWin = game(name, `Find the greatest common divisor of given numbers.`);
-if (isWin) console.log(`Congratulations, ${name}!`)
+if (isWin) console.log(`Congratulations, ${name}!`);
