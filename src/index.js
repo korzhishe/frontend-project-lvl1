@@ -4,6 +4,7 @@ import {car, cdr} from "@hexlet/pairs";
 const WELCOME = 'Welcome to the Brain Games!';
 const QUESTION_NAME = `May I have your name? `;
 const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
+const YOUR_ANSWER = `Your answer: `;
 
 export const make = () => {
     console.log(WELCOME);
@@ -14,7 +15,7 @@ export const make = () => {
         const isWin = questions.reduce((prev, cur) => {
             if (!prev) return false;
             console.log(`Question: ${car(cur)}`);
-            const answer = readlineSync.question(`Your answer: `);
+            const answer = readlineSync.question(YOUR_ANSWER);
             if (answer === cdr(cur)()) {
                 console.log(`Correct!`);
                 return true;
@@ -34,7 +35,7 @@ export const make_v2 = (questions, unCorrectAnswer) => {
         console.log(task);
         return questions.reduce((prev, cur) => {
             console.log(`Question: ${car(cur)}`);
-            const answer = readlineSync.question(`Your answer: `);
+            const answer = readlineSync.question(YOUR_ANSWER);
             if (answer === cdr(cur)()) console.log(`Correct!`);
             else console.log(unCorrectAnswer(answer, cdr(cur)(), name));
             return (answer === cdr(cur)()) && prev;
