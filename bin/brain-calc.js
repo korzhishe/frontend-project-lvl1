@@ -11,4 +11,4 @@ for (let i = 0; i < 5; i++) {
 }
 
 const game = make();
-const isWin = game(QUESTIONS, `What is the result of the expression?.`);
+game(QUESTIONS, `What is the result of the expression?.`);

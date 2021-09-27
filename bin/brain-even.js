@@ -10,4 +10,4 @@ for (let i = 0; i < 5; i++) {
 }
 
 const game = make();
-const isWin = game(QUESTIONS, `Answer "yes" if the number is even, otherwise answer "no".`);
+game(QUESTIONS, `Answer "yes" if the number is even, otherwise answer "no".`);
