@@ -7,8 +7,8 @@ const QUESTION_NAME = `May I have your name? `;
 export const make = () => {
     console.log(WELCOME);
     const name = readlineSync.question(QUESTION_NAME);
+    console.log(`Hello, ${name}!`);
     return (questions, task, unCorrectAnswer) => {
-        console.log(`Hello, ${name}!`);
         console.log(task);
         const isWin = questions.reduce((prev, cur) => {
             if (!prev) return false;
@@ -17,8 +17,7 @@ export const make = () => {
             if (answer === cdr(cur)()) {
                 console.log(`Correct!`);
                 return true;
-            }
-            else {
+            } else {
                 if(unCorrectAnswer != undefined) console.log(unCorrectAnswer(answer, cdr(cur)(), name));
                 return false;
             }
