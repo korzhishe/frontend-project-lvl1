@@ -3,7 +3,7 @@ import readlineSync from "readline-sync";
 import {make_v2} from "../src/index.js";
 import {cons} from "@hexlet/pairs";
 
-const WELCOME = 'Welcome to the Brain Gcd!';
+const WELCOME = 'Welcome to the Brain Games!';
 const QUESTION_NAME = `May I have your name? `;
 const QUESTIONS = [
     cons(`25 50`, () => '25'),
