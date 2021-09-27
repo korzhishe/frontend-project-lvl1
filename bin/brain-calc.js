@@ -1,18 +1,14 @@
 #!/usr/bin/env node
-import readlineSync from "readline-sync";
+import _ from 'lodash'
 import {make} from "../src/index.js";
 import {cons} from "@hexlet/pairs";
 
-const WELCOME = 'Welcome to the Brain Games!';
-const QUESTION_NAME = `May I have your name? `;
-const QUESTIONS = [
-    cons(`4 + 10`, () => '14'),
-    cons(`25 - 11`, () => '14'),
-    cons(`25 * 7`, () => '175'),
-];
+const QUESTIONS = [];
+for (let i = 0; i < 5; i++) {
+    const x = _.random(0, 100);
+    const y = _.random(0, 100);
+    QUESTIONS.push(cons(`${x} + ${y}`, () => `${x + y}`));
+}
 
-console.log(WELCOME);
-const name = readlineSync.question(QUESTION_NAME);
-const game = make(QUESTIONS);
-const isWin = game(name, `AWhat is the result of the expression?.`);
-if (isWin) console.log(`Congratulations, ${name}!`)
+const game = make();
+const isWin = game(QUESTIONS, `What is the result of the expression?.`);
