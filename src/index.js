@@ -3,12 +3,13 @@ import {car, cdr} from "@hexlet/pairs";
 
 const WELCOME = 'Welcome to the Brain Games!';
 const QUESTION_NAME = `May I have your name? `;
+const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
 
 export const make = () => {
     console.log(WELCOME);
     const name = readlineSync.question(QUESTION_NAME);
     console.log(`Hello, ${name}!`);
-    return (questions, task, unCorrectAnswer) => {
+    return (questions, task) => {
         console.log(task);
         const isWin = questions.reduce((prev, cur) => {
             if (!prev) return false;
@@ -18,7 +19,7 @@ export const make = () => {
                 console.log(`Correct!`);
                 return true;
             } else {
-                if(unCorrectAnswer != undefined) console.log(unCorrectAnswer(answer, cdr(cur)(), name));
+                console.log(unCorrectAnswer(answer, cdr(cur)(), name));
                 return false;
             }
         }, true);
