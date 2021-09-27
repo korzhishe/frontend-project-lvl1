@@ -4,7 +4,7 @@ import {make} from "../src/index.js";
 import {cons} from "@hexlet/pairs";
 
 const QUESTIONS = [];
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 3; i++) {
     const x = _.random(0, 100);
     const y = _.random(0, 100);
     QUESTIONS.push(cons(`${x} + ${y}`, () => `${x + y}`));
