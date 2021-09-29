@@ -18,7 +18,7 @@ for (let i = 0; i < 3; i += 1) {
   const index = _.random(0, 9);
   let curNumber = _.random(0, 100);
   const mas = [];
-  for (let j = 0; j < 10; j++) {
+  for (let j = 0; j < 10; j += 1) {
     mas.push(curNumber);
     curNumber += pr;
   }
@@ -28,4 +28,4 @@ for (let i = 0; i < 3; i += 1) {
 }
 
 const game = make();
-game(QUESTIONS, `What number is missing in the progression?`);
+game(QUESTIONS, 'What number is missing in the progression?');

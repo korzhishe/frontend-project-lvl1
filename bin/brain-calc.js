@@ -3,7 +3,6 @@ import _ from 'lodash';
 import { cons } from '@hexlet/pairs';
 import make from '../src/index.js';
 
-
 const QUESTIONS = [];
 for (let i = 0; i < 3; i += 1) {
   const x = _.random(0, 100);
@@ -12,4 +11,4 @@ for (let i = 0; i < 3; i += 1) {
 }
 
 const game = make();
-game(QUESTIONS, `What is the result of the expression?.`);
+game(QUESTIONS, 'What is the result of the expression?.');

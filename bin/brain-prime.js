@@ -4,7 +4,7 @@ import { cons } from '@hexlet/pairs';
 import make from '../src/index.js';
 
 const isPrime = (num) => {
-  for (let i = 2; i < num; i++) if (num % i === 0) return false;
+  for (let i = 2; i < num; i += 1) if (num % i === 0) return false;
   return num > 1;
 };
 
@@ -17,5 +17,5 @@ for (let i = 0; i < 3; i += 1) {
 const game = make();
 game(
   QUESTIONS,
-  `Answer "yes" if given number is prime. Otherwise answer "no".`
+  'Answer "yes" if given number is prime. Otherwise answer "no".',
 );

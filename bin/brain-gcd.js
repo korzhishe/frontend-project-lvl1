@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { cons } from '@hexlet/pairs';
 import make from '../src/index.js';
 
-const gcd = function (a, b) {
+const gcd = (a, b) => {
   if (!b) return a;
   return gcd(b, a % b);
 };
@@ -16,4 +16,4 @@ for (let i = 0; i < 3; i += 1) {
 }
 
 const game = make();
-game(QUESTIONS, `Find the greatest common divisor of given numbers.`);
+game(QUESTIONS, 'Find the greatest common divisor of given numbers.');

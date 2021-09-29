@@ -10,4 +10,4 @@ for (let i = 0; i < 3; i += 1) {
 }
 
 const game = make();
-game(QUESTIONS, `Answer "yes" if the number is even, otherwise answer "no".`);
+game(QUESTIONS, 'Answer "yes" if the number is even, otherwise answer "no".');
