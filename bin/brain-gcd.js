@@ -1,19 +1,19 @@
 #!/usr/bin/env node
-import readlineSync from "readline-sync";
-import {make_v2} from "../src/index.js";
-import {cons} from "@hexlet/pairs";
+import { make } from "../src/index.js";
+import { cons } from "@hexlet/pairs";
+import _ from "lodash";
 
-const WELCOME = 'Welcome to the Brain Games!';
-const QUESTION_NAME = `May I have your name? `;
-const QUESTIONS = [
-    cons(`25 50`, () => '25'),
-    cons(`100 52`, () => '4'),
-    cons(`3 9`, () => '3'),
-];
+const gcd = function (a, b) {
+    if (!b) return a;
+    return gcd(b, a % b);
+}
 
-console.log(WELCOME);
-const name = readlineSync.question(QUESTION_NAME);
-const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
-const game = make_v2(QUESTIONS, unCorrectAnswer);
-const isWin = game(name, `Find the greatest common divisor of given numbers.`);
-if (isWin) console.log(`Congratulations, ${name}!`);
+const QUESTIONS = [];
+for (let i = 0; i < 3; i++) {
+    const x = _.random(0, 100);
+    const y = _.random(0, 100);
+    QUESTIONS.push(cons(`${x} ${y}`, () => `${gcd(x, y)}`));
+}
+
+const game = make();
+game(QUESTIONS, `Find the greatest common divisor of given numbers.`);
