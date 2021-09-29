@@ -7,7 +7,7 @@ const unCorrectAnswer = (answer, correct, name) =>
   `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
 const YOUR_ANSWER = `Your answer: `;
 
-export const make = () => {
+export default () => {
   console.log(WELCOME);
   const name = readlineSync.question(QUESTION_NAME);
   console.log(`Hello, ${name}!`);
@@ -20,10 +20,10 @@ export const make = () => {
       if (answer === cdr(cur)()) {
         console.log(`Correct!`);
         return true;
-      } else {
-        console.log(unCorrectAnswer(answer, cdr(cur)(), name));
-        return false;
       }
+
+      console.log(unCorrectAnswer(answer, cdr(cur)(), name));
+      return false;
     }, true);
     if (isWin) console.log(`Congratulations, ${name}!`);
     return isWin;
