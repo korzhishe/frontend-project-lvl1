@@ -1,19 +1,31 @@
 #!/usr/bin/env node
-import readlineSync from "readline-sync";
-import {make_v2} from "../src/index.js";
+import {make} from "../src/index.js";
 import {cons} from "@hexlet/pairs";
+import _ from "lodash";
 
-const WELCOME = 'Welcome to the Brain Games!';
-const QUESTION_NAME = `May I have your name? `;
-const QUESTIONS = [
-    cons(`5 7 9 11 13 .. 17 19 21 23`, () => '15'),
-    cons(`2 5 8 .. 14 17 20 23 26 29`, () => '11'),
-    cons(`14 19 24 29 34 39 44 49 54 ..`, () => '59'),
-];
+const QUESTIONS = [];
 
-console.log(WELCOME);
-const name = readlineSync.question(QUESTION_NAME);
-const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
-const game = make_v2(QUESTIONS, unCorrectAnswer);
-const isWin = game(name, `Find the greatest common divisor of given numbers.`);
-if (isWin) console.log(`Congratulations, ${name}!`);
+function masToString(mas) {
+    let res = '';
+    for (const el of mas) {
+        res = `${res}${el} `;
+    }
+    return res;
+}
+
+for (let i = 0; i < 3; i++) {
+    const pr = _.random(0, 10);
+    const index = _.random(0, 9);
+    let curNumber = _.random(0, 100);
+    const mas = [];
+    for (let j = 0; j < 10; j++) {
+        mas.push(curNumber);
+        curNumber += pr;
+    }
+    const answer = mas[index];
+    mas[index] = '..';
+    QUESTIONS.push(cons(`${masToString(mas)}`, () => `${answer}`));
+}
+
+const game = make();
+game(QUESTIONS, `What number is missing in the progression?`);
