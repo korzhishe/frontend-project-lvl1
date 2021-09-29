@@ -3,8 +3,7 @@ import { car, cdr } from '@hexlet/pairs';
 
 const WELCOME = 'Welcome to the Brain Games!';
 const QUESTION_NAME = 'May I have your name? ';
-const unCorrectAnswer = (answer, correct, name) =>
-  `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
+const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
 const YOUR_ANSWER = 'Your answer: ';
 
 export default () => {

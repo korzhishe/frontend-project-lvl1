@@ -4,15 +4,6 @@ import { cons } from '@hexlet/pairs';
 import make from '../src/index.js';
 
 const QUESTIONS = [];
-
-function masToString(mas) {
-  let res = '';
-  for (const el of mas) {
-    res = `${res}${el} `;
-  }
-  return res;
-}
-
 for (let i = 0; i < 3; i += 1) {
   const pr = _.random(0, 10);
   const index = _.random(0, 9);
@@ -24,7 +15,7 @@ for (let i = 0; i < 3; i += 1) {
   }
   const answer = mas[index];
   mas[index] = '..';
-  QUESTIONS.push(cons(`${masToString(mas)}`, () => `${answer}`));
+  QUESTIONS.push(cons(`${mas.join(' ')}`, () => `${answer}`));
 }
 
 const game = make();
