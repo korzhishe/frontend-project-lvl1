@@ -8,14 +8,11 @@ const isPrime = (num) => {
   return num > 1;
 };
 
-const QUESTIONS = [];
-for (let i = 0; i < 3; i += 1) {
+const getQuestion = () => {
   const x = _.random(0, 100);
-  QUESTIONS.push(cons(`${x}`, () => `${isPrime(x) ? 'yes' : 'no'}`));
-}
+  return cons(`${x}`, () => `${isPrime(x) ? 'yes' : 'no'}`);
+};
 
-const game = make();
-game(
-  QUESTIONS,
-  'Answer "yes" if given number is prime. Otherwise answer "no".',
-);
+const game = make(getQuestion);
+game('Answer "yes" if given number is prime. Otherwise answer "no".');
+
