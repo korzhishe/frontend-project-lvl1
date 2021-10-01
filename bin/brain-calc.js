@@ -1,14 +1,21 @@
 #!/usr/bin/env node
 import _ from 'lodash';
-import { cons } from '@hexlet/pairs';
+import { car, cdr, cons } from '@hexlet/pairs';
 import make from '../src/index.js';
 
-const QUESTIONS = [];
-for (let i = 0; i < 3; i += 1) {
-  const x = _.random(0, 100);
-  const y = _.random(0, 100);
-  QUESTIONS.push(cons(`${x} + ${y}`, () => `${x + y}`));
-}
+const Operations = [
+  cons('+', (x, y) => x + y),
+  cons('-', (x, y) => x - y),
+  cons('/', (x, y) => x / y),
+  cons('*', (x, y) => x * y),
+];
 
-const game = make();
-game(QUESTIONS, 'What is the result of the expression?.');
+const getQuestion = () => {
+  const x = _.random(1, 100);
+  const y = _.random(1, 100);
+  const operation = Operations[_.random(0, 3)];
+  return cons(`${x} ${car(operation)} ${y}`, () => `${cdr(operation)(x, y)}`);
+};
+
+const game = make(getQuestion);
+game('What is the result of the expression?');
