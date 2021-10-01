@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import {car, cdr, cons} from '@hexlet/pairs';
+import { car, cdr } from '@hexlet/pairs';
 
 const welcomeToTheBrainGames = 'Welcome to the Brain Games!';
 const questionName = 'May I have your name? ';
