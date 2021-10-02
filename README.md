@@ -9,6 +9,6 @@ Example Brain-calc:  https://asciinema.org/a/6PxpfUGvTOZRdkhfCZ3z1MlHB
 
 Example Brain-gcd:  https://asciinema.org/a/IUZeUnFUUOP8a9aSOR2PR1FU9
 
-Example Brain-progression: https://asciinema.org/a/LMDIBMiDixgHJeiFXtf2d0nLl
+Example Brain-progression: https://asciinema.org/a/TMoPkgk4n8gDsqdCV400oK497
 
 Example Brain-prime:   https://asciinema.org/a/4kYnoLZLjQEt3xhiuy9jlbQ7N
