@@ -7,7 +7,7 @@ Example Brain-even:   https://asciinema.org/a/MEmDbWD0arL9omHIwrkglIjo7
 
 Example Brain-calc:  https://asciinema.org/a/6PxpfUGvTOZRdkhfCZ3z1MlHB
 
-Example Brain-gcd: https://asciinema.org/a/YkFZTB0zkBPZLcTHZXwUs5a1e
+Example Brain-gcd:  https://asciinema.org/a/IUZeUnFUUOP8a9aSOR2PR1FU9
 
 Example Brain-progression: https://asciinema.org/a/LMDIBMiDixgHJeiFXtf2d0nLl
 
