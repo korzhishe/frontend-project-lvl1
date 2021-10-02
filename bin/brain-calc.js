@@ -3,11 +3,13 @@ import _ from 'lodash';
 import { car, cdr, cons } from '@hexlet/pairs';
 import make from '../src/index.js';
 
+const roundResult = x => Math.round(x);
+
 const Operations = [
-  cons('+', (x, y) => (x + y).toFixed(2)),
-  cons('-', (x, y) => (x - y).toFixed(2)),
-  cons('/', (x, y) => (x / y).toFixed(2)),
-  cons('*', (x, y) => (x * y).toFixed(2)),
+  cons('+', (x, y) => roundResult(x + y)),
+  cons('-', (x, y) => roundResult(x - y)),
+  cons('/', (x, y) => roundResult(x / y)),
+  cons('*', (x, y) => roundResult(x * y)),
 ];
 
 const getQuestion = () => {
