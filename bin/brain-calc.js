@@ -4,10 +4,10 @@ import { car, cdr, cons } from '@hexlet/pairs';
 import make from '../src/index.js';
 
 const Operations = [
-  cons('+', (x, y) => x + y),
-  cons('-', (x, y) => x - y),
-  cons('/', (x, y) => x / y),
-  cons('*', (x, y) => x * y),
+  cons('+', (x, y) => Math.round(x + y)),
+  cons('-', (x, y) => Math.round(x - y)),
+  cons('/', (x, y) => Math.round(x / y)),
+  cons('*', (x, y) => Math.round(x * y)),
 ];
 
 const getQuestion = () => {
