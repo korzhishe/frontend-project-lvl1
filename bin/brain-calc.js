@@ -14,7 +14,7 @@ const Operations = [
 const getQuestion = () => {
   const x = _.random(1, 100);
   const y = _.random(1, 100);
-  const operation = Operations[_.random(0, 3)];
+  const operation = Operations[_.random(0, 2)];
   return cons(`${x} ${car(operation)} ${y}`, () => `${cdr(operation)(x, y)}`);
 };
 
