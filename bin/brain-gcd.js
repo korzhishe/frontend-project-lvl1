@@ -14,5 +14,5 @@ const getQuestion = () => {
   return cons(`${x} ${y}`, () => `${gcd(x, y)}`);
 };
 
-const game = make(getQuestion);
-game('Find the greatest common divisor of given numbers.');
+const game = make(getQuestion, 'Find the greatest common divisor of given numbers.');
+game();

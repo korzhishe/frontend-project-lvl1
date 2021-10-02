@@ -13,6 +13,6 @@ const getQuestion = () => {
   return cons(`${x}`, () => `${isPrime(x) ? 'yes' : 'no'}`);
 };
 
-const game = make(getQuestion);
-game('Answer "yes" if given number is prime. Otherwise answer "no".');
+const game = make(getQuestion, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+game();
 

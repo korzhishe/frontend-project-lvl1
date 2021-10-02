@@ -8,5 +8,5 @@ const getQuestion = () => {
   return cons(`${x}`, () => (x % 2 === 0 ? 'yes' : 'no'));
 };
 
-const game = make(getQuestion);
-game('Answer "yes" if the number is even, otherwise answer "no".');
+const game = make(getQuestion, 'Answer "yes" if the number is even, otherwise answer "no".');
+game();

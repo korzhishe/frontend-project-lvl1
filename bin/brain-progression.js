@@ -13,5 +13,5 @@ const getQuestion = () => {
   return cons(`${mas.join(' ')}`, () => `${answer}`);
 };
 
-const game = make(getQuestion);
-game('What number is missing in the progression?');
+const game = make(getQuestion, 'What number is missing in the progression?');
+game();

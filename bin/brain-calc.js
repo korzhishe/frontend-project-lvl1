@@ -17,5 +17,5 @@ const getQuestion = () => {
   return cons(`${x} ${car(operation)} ${y}`, () => `${cdr(operation)(x, y)}`);
 };
 
-const game = make(getQuestion);
-game('What is the result of the expression?');
+const game = make(getQuestion, 'What is the result of the expression?');
+game();
