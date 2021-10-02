@@ -6,7 +6,7 @@ const questionName = 'May I have your name? ';
 const uncorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
 const yourAnswer = 'Your answer: ';
 const numberQuestions = 3;
-const congratulate = name => console.log(`Congratulations, ${name}!`);
+const congratulate = (name) => console.log(`Congratulations, ${name}!`);
 
 export default (getQuestion, task) => {
   console.log(welcomeToTheBrainGames);
