@@ -3,9 +3,10 @@ import { car, cdr } from '@hexlet/pairs';
 
 const welcomeToTheBrainGames = 'Welcome to the Brain Games!';
 const questionName = 'May I have your name? ';
-const unCorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
+const uncorrectAnswer = (answer, correct, name) => `'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`;
 const yourAnswer = 'Your answer: ';
 const numberQuestions = 3;
+const congratulate = name => console.log(`Congratulations, ${name}!`);
 
 export default (getQuestion) => {
   console.log(welcomeToTheBrainGames);
@@ -25,10 +26,10 @@ export default (getQuestion) => {
         return true;
       }
 
-      console.log(unCorrectAnswer(answer, cdr(cur)(), name));
+      console.log(uncorrectAnswer(answer, cdr(cur)(), name));
       return false;
     }, true);
-    if (isWin) console.log(`Congratulations, ${name}!`);
+    if (isWin) congratulate(name);
     return isWin;
   };
 };

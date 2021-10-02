@@ -7,7 +7,7 @@ const getQuestion = () => {
   const pr = _.random(1, 10);
   const index = _.random(0, 9);
   const startNumber = _.random(0, 100);
-  const mas = _.range(startNumber, startNumber + (pr * 10), pr);
+  const mas = _.range(startNumber, startNumber + pr * 10, pr);
   const answer = mas[index];
   mas[index] = '..';
   return cons(`${mas.join(' ')}`, () => `${answer}`);
