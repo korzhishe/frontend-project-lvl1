@@ -8,7 +8,6 @@ const roundResult = x => Math.round(x);
 const Operations = [
   cons('+', (x, y) => roundResult(x + y)),
   cons('-', (x, y) => roundResult(x - y)),
-  cons('/', (x, y) => roundResult(x / y)),
   cons('*', (x, y) => roundResult(x * y)),
 ];
 
