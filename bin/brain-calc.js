@@ -5,7 +5,7 @@ import make from '../src/index.js';
 
 const roundResult = x => Math.round(x);
 
-const Operations = [
+const operations = [
   cons('+', (x, y) => roundResult(x + y)),
   cons('-', (x, y) => roundResult(x - y)),
   cons('*', (x, y) => roundResult(x * y)),
@@ -14,7 +14,7 @@ const Operations = [
 const getQuestion = () => {
   const x = _.random(1, 100);
   const y = _.random(1, 100);
-  const operation = Operations[_.random(0, 2)];
+  const operation = operations[_.random(0, operations.length-1)];
   return cons(`${x} ${car(operation)} ${y}`, () => `${cdr(operation)(x, y)}`);
 };
 
