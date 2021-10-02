@@ -8,14 +8,14 @@ const yourAnswer = 'Your answer: ';
 const numberQuestions = 3;
 const congratulate = name => console.log(`Congratulations, ${name}!`);
 
-export default (getQuestion) => {
+export default (getQuestion, task) => {
   console.log(welcomeToTheBrainGames);
   const name = readlineSync.question(questionName);
   console.log(`Hello, ${name}!`);
 
   const questions = [...Array(numberQuestions).keys()].map(getQuestion);
 
-  return (task) => {
+  return () => {
     console.log(task);
     const isWin = questions.reduce((prev, cur) => {
       if (!prev) return false;
